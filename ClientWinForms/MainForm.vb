@@ -1,14 +1,25 @@
 ﻿Imports System.Net
 Imports System.Net.Sockets
 Imports System.Text
-
+'Basic thing
 Public Class MainForm
 
     Dim _client As TcpClient
 
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Form1.Show()
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form1.Close()
+
+        If IpAccept.Text = "" Then
+            IpAccept.Text = "192.168.110.13"
+        End If
+
         Try
             Dim ip As String = IpAccept.Text
+
             Dim port As Integer = 5432
 
             _client = New TcpClient(ip, port)
@@ -25,6 +36,7 @@ Public Class MainForm
 
     Private Sub ReceiveMessages(state As Object)
         Try
+
             While True
 
                 Dim ns As NetworkStream = _client.GetStream()
@@ -53,4 +65,6 @@ Public Class MainForm
             MsgBox(ex.Message)
         End Try
     End Sub
+
+
 End Class
