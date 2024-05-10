@@ -125,6 +125,7 @@
 5/01/24: Server restart button was added. [Vince]
 
 5/02/24: Added Updates panel that opens when the application is started. The updates panel will automatically close when the user attempts to connect to the server.  An issue regarding the server not stopping was also fixed. [Vince] The server side application also now automatically opens when the chat room is open.
-</value>
+
+5/10/24: Supposedly fixed a developer side issue where the program would not save and upload properly [Vince]</value>
   </data>
 </root>
